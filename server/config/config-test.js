@@ -1,7 +1,7 @@
 var config = {
-  database: 'selnum', 
-  username: 'root', 
-  password: 'root',
+  database: 'dingding',
+  username: 'root',
+  password: 'wuyuehua',
   host: 'localhost',
   port: 3306
 };

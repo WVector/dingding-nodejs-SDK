@@ -4,6 +4,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 开发环境下面使用vConsole进行调试
+if (process.env.NODE_ENV === 'development') {
+    const VConsole = require('vconsole')
+    new VConsole()
+}
+
 Vue.config.productionTip = false
 /* eslint-disable */
 let query = parseQueryString();
@@ -16,15 +22,15 @@ new Vue({
   render: h => h(App)
 }).$mount('#app');
 
-Date.prototype.format = function (fmt) { //author: meizz 
+Date.prototype.format = function (fmt) { //author: meizz
   var o = {
-      "M+": this.getMonth() + 1, //月份 
-      "d+": this.getDate(), //日 
-      "h+": this.getHours(), //小时 
-      "m+": this.getMinutes(), //分 
-      "s+": this.getSeconds(), //秒 
-      "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
-      "S": this.getMilliseconds() //毫秒 
+      "M+": this.getMonth() + 1, //月份
+      "d+": this.getDate(), //日
+      "h+": this.getHours(), //小时
+      "m+": this.getMinutes(), //分
+      "s+": this.getSeconds(), //秒
+      "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+      "S": this.getMilliseconds() //毫秒
   };
   if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
   for (var k in o)
